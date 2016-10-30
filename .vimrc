@@ -63,6 +63,8 @@ nnoremap <Leader>o :browse old<CR>
 nnoremap <Leader>b :ls<CR>:let nr=input("Switch to: ")<Bar>exe "buf" . nr<CR>
 " See the man page for the word under cursor (on \m)
 nnoremap <Leader>m :!man <C-r><C-w><CR>
+" NERDTree (on \n)
+nnoremap <Leader>n :NERDTree<CR><C-L>
 " Rename all occurances of the word under cursor (on \s)
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
 " When I edit a new file, there's no "#!" line at the top by which to set
