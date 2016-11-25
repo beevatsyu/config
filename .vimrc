@@ -63,11 +63,7 @@ nnoremap <Leader>o :browse old<CR>
 nnoremap <Leader>b :ls<CR>:let nr=input("Switch to: ")<Bar>exe "buf" . nr<CR>
 " See the man page for the word under cursor (on \m)
 nnoremap <Leader>m :!man <C-r><C-w><CR>
-<<<<<<< HEAD
 " Open NERDTree file browser (on \m)
-=======
-" NERDTree (on \n)
->>>>>>> 70c4d87f74eeb95b1f5090df560637cf037e59c4
 nnoremap <Leader>n :NERDTree<CR><C-L>
 " Rename all occurances of the word under cursor (on \s)
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
