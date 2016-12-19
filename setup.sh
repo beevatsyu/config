@@ -1,4 +1,4 @@
-#! /usr/bin/bash
+#! /bin/bash
 # source this file
 ln -sf `pwd`/.bashrc ~
 ln -sf `pwd`/.vimrc ~
