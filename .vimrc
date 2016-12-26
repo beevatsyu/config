@@ -73,6 +73,7 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
 nmap <F1> :doau syntax BufReadPost <Bar> doau settings BufReadPost
 nmap <F3> :g/^ \+\*\@!\<Bar>\s\+$\<Bar>\%>80v.\<Bar>^\n$/<CR>:nohl<CR>
 nmap <F4> :call Toggle_vxpick()<CR><C-L>
+set pastetoggle=<F12>
 
 if version >= 500
   " I've gotten too used to the reformat command living on the 'Q' key.
