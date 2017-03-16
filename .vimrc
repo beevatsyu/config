@@ -36,19 +36,19 @@ highlight MatchParen term=reverse ctermbg=6 ctermfg=0 guibg=DarkCyan
 " vxpick - Highlights unwanted blanks and wide lines.
 "	   Use F3 to list lines matching vxpick.
 "	   Use F4 to toggle the highlight.
-highlight vxpick ctermbg=1
-let s:Toggle = 1
-fun Toggle_vxpick()
-  if s:Toggle
-    highlight vxpick NONE
-    let s:Toggle = 0
-  else
-    highlight vxpick ctermbg=1
-    let s:Toggle = 1
-  endif
-endfun
+"highlight vxpick ctermbg=1
+"let s:Toggle = 1
+"fun Toggle_vxpick()
+"  if s:Toggle
+"    highlight vxpick NONE
+"    let s:Toggle = 0
+"  else
+"    highlight vxpick ctermbg=1
+"    let s:Toggle = 1
+"  endif
+"endfun
 " Restricted among the necessary file extensions.
-autocmd VimEnter,WinEnter *.c*,*.h*,*.C*,*.H* match vxpick /^ \+\*\@!\|\s\+$\|\%>80v.\+\|^\n$/
+"autocmd VimEnter,WinEnter *.c*,*.h*,*.C*,*.H* match vxpick /^ \+\*\@!\|\s\+$\|\%>80v.\+\|^\n$/
 
 " Auto comment
 autocmd FileType c,cpp,sh,conf set formatoptions+=r
@@ -71,8 +71,21 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
 " syntax highlighting and other file-specific options; this mapping lets me
 " recheck those after adding the "#!" line.
 nmap <F1> :doau syntax BufReadPost <Bar> doau settings BufReadPost
-nmap <F3> :g/^ \+\*\@!\<Bar>\s\+$\<Bar>\%>80v.\<Bar>^\n$/<CR>:nohl<CR>
-nmap <F4> :call Toggle_vxpick()<CR><C-L>
+"Enable and disable mouse use
+noremap <F2> :call ToggleMouse() <CR>
+function! ToggleMouse()
+  if &mouse == 'a'
+    set mouse=
+    set nonumber
+    echo "Mouse usage disabled"
+  else
+    set mouse=a
+    set number
+    echo "Mouse usage enabled"
+  endif
+endfunction
+"nmap <F3> :g/^ \+\*\@!\<Bar>\s\+$\<Bar>\%>80v.\<Bar>^\n$/<CR>:nohl<CR>
+"nmap <F4> :call Toggle_vxpick()<CR><C-L>
 set pastetoggle=<F12>
 
 if version >= 500
