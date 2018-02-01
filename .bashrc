@@ -1,7 +1,13 @@
 # User dependent .bashrc file
 
+git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # Set a default prompt of: user@host and current_directory
-PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h:\[\e[33m\]\w\[\e[0m\]\n\$ '
+#PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h:\[\e[33m\]\w\[\e[0m\]\n\$ '
+# Set a default prompt of: user@host, current_directory and current_branch
+PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h:\[\e[33m\]\w\[\e[1;34m\]$(current_branch)\[\e[0m\]\n\$ '
 
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
@@ -61,6 +67,8 @@ fi
 # Whenever displaying the prompt, write the previous line to disk
 # export PROMPT_COMMAND="history -a"
 export EDITOR=vim
+export HISTCONTROL='ignoreboth:erasedups'
+export HISTSIZE=99999
 
 # Aliases
 #
@@ -98,6 +106,7 @@ alias fgrep='fgrep --color=auto'              # show differences in colour
 alias ll='ls -l'                              # long list
 alias la='ls -A'                              # all but . and ..
 # alias l='ls -CF'                              #
+alias cscope='cscope -C'		      # caseless mode
 
 # Umask
 #
