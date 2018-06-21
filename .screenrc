@@ -1,0 +1,16 @@
+# Use bash
+shell /usr/software/bin/bash
+
+# Big scrollback
+defscrollback 999999
+
+# No startup message
+startup_message off
+
+# Display the status line at the bottom
+hardstatus alwayslastline
+hardstatus string '%{= kg}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n %t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d %{W}%C%A%{g}]'
+
+# Misc.
+vbell off
+altscreen on

@@ -103,8 +103,8 @@ alias fgrep='fgrep --color=auto'              # show differences in colour
  alias ls='ls -h --color=tty'                 # classify files in colour
 # alias dir='ls --color=auto --format=vertical'
 # alias vdir='ls --color=auto --format=long'
-alias ll='ls -l'                              # long list
-alias la='ls -A'                              # all but . and ..
+alias ll='ls -Al'                              # long list
+alias la='ls -a'                              # all but . and ..
 # alias l='ls -CF'                              #
 alias cscope='cscope -C'		      # caseless mode
 
